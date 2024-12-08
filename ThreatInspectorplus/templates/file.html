@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analyze files for malware and security threats. Collaborate with the cybersecurity community.">
+    <title>ThreatInspectorPlus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+        body {
+            background-color: #1a1a2e; /* Match dark theme */
+            color: white;
+        }
+        .file-upload-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .file-upload-image {
+            width: 100px;
+            height: 100px;
+            background-color: #2c2c54; /* Dark background for the image container */
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+        .file-upload-image img {
+            width: 60%;
+            height: auto;
+        }
+        .custom-file-input {
+            display: none; /* Hide default file input */
+        }
+        .custom-file-label {
+            background-color: #4a69bd;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+        .custom-file-label:hover {
+            background-color: #3b5998;
+        }
+    </style>
+</head>
+<body data-bs-theme="dark">
+<div class="container text-center">
+    {% include 'nav.html' %}
+    <h1>FILE SCANNER</h1>
+    <p>The File Scanner is a powerful tool that detects and analyzes harmful files, URLs,
+        and domains to identify malware and vulnerabilities. With a user-friendly interface
+        and advanced threat detection, it helps safeguard data and ensures system security in the digital world.</p>
+     <div class="file-upload-container">
+            <!-- Image Placeholder -->
+            <div class="file-upload-image">
+                <img src="{{ url_for('static', path='file.jpg') }}" alt="File Scanner">
+            </div>
+            <!-- Custom File Input -->
+            <input type="file" id="fileInput" class="custom-file-input">
+            <label for="fileInput" class="custom-file-label">Choose file</label>
+         <p>
+    By submitting data above, you agree to our
+    <a href="#terms-of-service">Terms of Service</a> and
+    <a href="#privacy-policy">Privacy Policy</a>, including the sharing of your submission with the cybersecurity community.
+    Please avoid submitting personal or sensitive information. We are not responsible for the content of your submission.
+    <a href="#learn-more">Learn more</a>.
+</p>
+
+        </div>
+        {% include 'footer.html' %}
+    </div>
+</body>
+</html>
